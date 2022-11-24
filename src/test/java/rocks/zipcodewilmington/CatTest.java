@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import rocks.zipcodewilmington.animals.Cat;
 
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -39,5 +40,28 @@ public class CatTest {
         Assert.assertEquals(givenBirthDate, retrievedBirthDate);
         Assert.assertEquals(givenId, retrievedId);
     }
+
+    @Test
+    public void setName() {
+        String expectedCatName = "Jensen";
+        Date expectedBirthday = new Date (2000, 9,31);
+        Integer expectedId = 10312000;
+
+        Cat cat = new Cat(expectedCatName, expectedBirthday, expectedId);
+        String actual = cat.getName();
+        Assert.assertEquals(expectedCatName,actual);
+    }
+
+    @Test
+    public void catSpeakTest() {
+        String expectedCatName = "Jensen";
+        Date expectedBirthday = new Date (2000, 9, 31);
+        Integer expectedId = 10312000;
+
+        Cat cat = new Cat(expectedCatName, expectedBirthday,expectedId);
+        String actual = cat.speak();
+        Assert.assertEquals(expectedCatName,actual);
+    }
+
 
 }
